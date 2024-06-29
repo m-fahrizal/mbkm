@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PascaMbkmController;
 use App\Http\Controllers\PraMbkmController;
 use App\Http\Controllers\ProfileController;
@@ -51,6 +52,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/logbook-admin', [LogbookController::class, 'adminIndex'])->name('logbook.admin-index');
     Route::get('/lowongan-mahasiswa', [LowonganController::class, 'userIndex'])->name('lowongan.user-index');
+    Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
     
 });

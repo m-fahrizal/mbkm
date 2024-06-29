@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('pra_mbkm', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_mahasiswa');
+            $table->foreignId('id_dosen');
             $table->string('jenis_mbkm');
             $table->char('periode_mbkm', 255);
             $table->char('durasi_kegiatan', 255);
@@ -23,7 +24,6 @@ return new class extends Migration
             $table->string('nama_mentor');
             $table->string('posisi');
             $table->string('no_hp');
-            $table->string('dosen')->nullable();
 
             $table->string('loa')->nullable();
             $table->string('krs')->nullable();
@@ -31,6 +31,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('id_mahasiswa')->references('id')->on('mahasiswa')->onDelete('cascade');
+            $table->foreign('id_dosen')->references('id')->on('dosen')->onDelete('cascade');
         });
     }
 

@@ -21,7 +21,7 @@ class PraMbkm extends Model
         'nama_mentor', 
         'posisi', 
         'no_hp',
-        'dosen',
+        'id_dosen',
         'loa', 
         'krs', 
         'khs'
@@ -30,6 +30,11 @@ class PraMbkm extends Model
     public function mahasiswa()
     {
         return $this->belongsTo(Mahasiswa::class, 'id_mahasiswa');
+    }
+
+    public function dosen()
+    {
+        return $this->belongsTo(Dosen::class, 'id_dosen');
     }
 
     public function pascaMbkm()

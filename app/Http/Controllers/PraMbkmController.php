@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\PraMbkm;
 use App\Models\User;
@@ -83,7 +84,8 @@ class PraMbkmController extends Controller
     public function edit(string $id)
     {
         $prambkm = Prambkm::findOrFail($id);
-        return view('admin.pra-mbkm.edit', compact('prambkm'));
+        $dosen = Dosen::all();
+        return view('admin.pra-mbkm.edit', compact('prambkm', 'dosen'));
     }
 
     /**
@@ -91,6 +93,7 @@ class PraMbkmController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // dd($request->dosen);
         $praMbkm = PraMbkm::find($id);
         $loa = $request->file('loa') ? $request->file('loa')->store('files', 'public') : $praMbkm->loa;
         $krs = $request->file('krs') ? $request->file('krs')->store('files', 'public') : $praMbkm->krs;
@@ -104,7 +107,7 @@ class PraMbkmController extends Controller
             'instansi' => $request->instansi,
             'alamat_instansi' => $request->alamat_instansi,
             'nama_mentor' => $request->nama_mentor,
-            'dosen' => $request->dosen,
+            'id_dosen' => $request->dosen,
             'posisi' => $request->posisi,
             'loa' => $loa,
             'krs' => $krs,

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\PraMbkm;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +16,10 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        $id = Dosen::where('id_user', auth()->user()->id)->first();
+        $dosen = PraMbkm::where('id_dosen', $id->id)->get();
+        // dd($dosen);
+        return view('admin.mahasiswa.index', compact('dosen'));
     }
 
     /**
@@ -35,11 +40,11 @@ class MahasiswaController extends Controller
             'username' => $request->nim,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'mahasiswa',     
+            'role' => 'mahasiswa',
         ]);
 
         Mahasiswa::create([
-            'id_user'=>$user->id,
+            'id_user' => $user->id,
             'nim' => $request->nim,
             'prodi' => $request->prodi,
             'angkatan' => $request->angkatan,
@@ -48,7 +53,7 @@ class MahasiswaController extends Controller
         ]);
 
 
-        return redirect()->route('user.index')->with('success', 'Berhasil menambahkan mahasiswa'); 
+        return redirect()->route('user.index')->with('success', 'Berhasil menambahkan mahasiswa');
     }
 
     /**

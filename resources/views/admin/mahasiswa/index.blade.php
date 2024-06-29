@@ -6,9 +6,9 @@
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Mahasiswa Pra MBKM</h1>
+                <h1 class="h3 mb-0 text-gray-800">Data Bimbingan MBKM</h1>
                 <!-- report -->
-                <a href="{{ route('prambkm.print') }}" target="_blank"
+                <a href="{{ route('pascambkm.print') }}" target="_blank"
                     class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
                         class="fas fa-print fa-sm text-white-50"></i> Buat Laporan</a>
             </div>
@@ -47,16 +47,14 @@
                                             <th>Instansi</th>
                                             <th>Alamat Instansi</th>
                                             <th>Nama Mentor</th>
-                                            <th>Dosen Pembimbing</th>
                                             <th>Posisi</th>
                                             <th>loa</th>
                                             <th>KRS</th>
                                             <th>KHS</th>
-                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $item)
+                                        @foreach ($dosen as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->mahasiswa->nim }}</td>
@@ -73,7 +71,6 @@
                                                 <td>{{ $item->instansi }}</td>
                                                 <td>{{ $item->alamat_instansi }}</td>
                                                 <td>{{ $item->nama_mentor }}</td>
-                                                <td>{{ $item->dosen->user->name }}</td>
                                                 <td>{{ $item->posisi }}</td>
                                                 <td><a href="{{ Storage::url($item->loa) }}" target="_blank">Lihat
                                                         FIle</a></td>
@@ -81,28 +78,6 @@
                                                         FIle</a></td>
                                                 <td><a href="{{ Storage::url($item->khs) }}" target="_blank">Lihat
                                                         FIle</a></td>
-                                                <td>
-                                                    <!-- Form for EDIT request -->
-                                                    <form action="{{ route('prambkm.edit', $item->id) }}"
-                                                        method="GET" style="display:inline;">
-                                                        <button
-                                                            class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"
-                                                            type="submit"><i class="fas fa-edit"></i></button>
-                                                    </form>
-
-                                                    <!-- Form for DELETE request -->
-                                                    <form id="deleteForm{{ $item->id }}"
-                                                        action="{{ route('prambkm.destroy', $item->id) }}"
-                                                        id="{{ $item->id }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="button"
-                                                            class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $item->id }})">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

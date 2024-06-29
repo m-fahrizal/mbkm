@@ -78,6 +78,12 @@
                 <i class="fas fa-fw fa-clipboard-list"></i>
                 <span>Data Pra MBKM</span></a>
         </li>
+        <!-- Nav Item - Pasca -->
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('pascambkm.index') }}">
+                <i class="fas fa-fw fa-clipboard-check"></i>
+                <span>Data Pasca MBKM</span></a>
+        </li>
     @endcan
 
     @can('pic')
@@ -205,6 +211,12 @@
             <a class="nav-link" href="/dashboard">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
+        </li>
+        <!-- Nav Item - Mahasiswa -->
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('mahasiswa.index') }}">
+                <i class="fas fa-user-graduate"></i>
+                <span>Mahasiswa</span></a>
         </li>
         <!-- Nav Item - Pasca -->
         <li class="nav-item active">

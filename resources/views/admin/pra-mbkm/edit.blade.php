@@ -114,8 +114,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="dosen">Dosen Pembimbing</label>
-                                    <input type="text" class="form-control" id="dosen" name="dosen"
-                                        value="{{ $prambkm->dosen }}" required>
+                                    <select name='dosen' required>
+                                        @foreach ($dosen as $d)
+                                        <option value='{{ $d->id }}'>{{ $d->user->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="posisi">Posisi</label>
