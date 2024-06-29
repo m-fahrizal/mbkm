@@ -19,6 +19,12 @@ class PascaMbkmController extends Controller
         return view('admin.pasca-mbkm.index', compact('data'));
     }
 
+    public function print()
+    {
+        $data = PascaMbkm::all(); 
+        return view('admin.pasca-mbkm.print', compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

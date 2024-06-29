@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('css/form-mandiri.css') }}">
     <div class="main-content">
         <a href="{{ route('lowongan.user-index') }}" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
-        <h1>Daftar MBKM Mandiri</h1>
+        <h1>{{ $lowongan->nama_perusahaan }}</h1>
         @if ($message = Session::get('success'))
             <div>{{ $message }}</div>
         @endif
@@ -20,10 +20,6 @@
                     </select>
                 </div>
                 <input type="hidden" value="{{ $lowongan->id }}" name="id_lowongan"/>
-                <div class="input-box">
-                    <label for="nama_instansi">Nama Instansi *</label>
-                    <input type="text" name="nama_instansi" disabled value="{{ $lowongan->nama_perusahaan }}" placeholder="Masukkan Nama Instansi" required>
-                </div>
                 <div class="input-box">
                     <label for="posisi">Posisi *</label>
                     <input type="text" name="posisi" disabled value="{{ $lowongan->posisi }}" placeholder="Masukkan Posisi Yang Dilamar" required>

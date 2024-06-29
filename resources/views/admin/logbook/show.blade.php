@@ -24,6 +24,7 @@
                             <div class="card-body">
                                 <h5 class="text-primary">Minggu {{ $loop->iteration }}</h5>
                                 <p>{{ $item->deskripsi }}</p>
+                                <br>
                                 <img src="{{ Storage::url($item->image) }}" alt="Image"
                                     style="width: 400px; height: auto;">
                                 <a href="/form-logbook" class="edit"><i

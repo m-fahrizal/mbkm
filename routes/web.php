@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\PascaMbkmController;
 use App\Http\Controllers\PraMbkmController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -40,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/pra-mbkm-print', [PraMbkmController::class, 'print'])->name('prambkm.print');
     
     Route::resource('pascambkm', \App\Http\Controllers\PascaMbkmController::class);
+    Route::get('/pasca-mbkm-print', [PascaMbkmController::class, 'print'])->name('pascambkm.print');
 
     Route::resource('daftarmbkm', \App\Http\Controllers\DaftarMbkmController::class);
     Route::get('/daftar-mbkm-print', [DaftarMbkmController::class, 'print'])->name('daftarmbkm.print');

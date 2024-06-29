@@ -59,7 +59,7 @@
                                             </select><br><br>
                                         </div>
                                         <div class="input-box">
-                                            <label for="nip">Nomor Handphone*</label><br>
+                                            <label for="no_hp">Nomor Handphone*</label><br>
                                             <input type="number" name="no_hp" placeholder="Masukkan No HP"
                                                 required><br><br>
                                         </div>

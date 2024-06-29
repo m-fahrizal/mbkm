@@ -4,8 +4,8 @@
         <div class="done"></div>
         <div class="card-container">
             <div class="card-done">
-                <h1>BLOCKED</h1>
-                <img src="/img/done.png" alt="">
+                <h1>Anda harus mengisi Form Pra MBKM terlebih dahulu!</h1>
+                <img src="/img/block.png" alt="">
                 <h2>Terima Kasih</h2>
             </div>
         </div>

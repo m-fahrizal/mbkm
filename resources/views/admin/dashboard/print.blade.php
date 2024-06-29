@@ -4,7 +4,11 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+            <div class="card-header py-3">
+                <img src="{{ asset('img/upn.png') }}" style="width: 50px; margin-left: 850px" alt="">
+                <h6 class="m-0 font-weight-bold text-primary">MBKM Fakultas Ilmu Komputer
+                </h6>
+            </div>
             <!-- Content Row -->
             <div class="row">
 
@@ -34,7 +38,8 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                         S1 Informatika</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $mhsCount['S1 Informatika'] }}</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        {{ $mhsCount['S1 Informatika'] }}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
@@ -55,7 +60,8 @@
                                     </div>
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-auto">
-                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $mhsCount['S1 Sistem Informasi'] }}</div>
+                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                {{ $mhsCount['S1 Sistem Informasi'] }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +81,8 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                         D3 Sistem Informasi</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $mhsCount['D3 Sistem Informasi'] }}</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        {{ $mhsCount['D3 Sistem Informasi'] }}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
@@ -397,6 +404,10 @@
                     cutoutPercentage: 80,
                 },
             });
+        </script>
+
+        <script type="text/javascript">
+            window.print();
         </script>
     @endforeach
 </x-print-layout>
