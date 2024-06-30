@@ -27,47 +27,44 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('staff.store') }}" method="POST"
-                                    enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="card-body">
-                                        <div class="input-box">
-                                            <label for="nip">Nomor Induk Pegawai*</label><br>
-                                            <input type="number" name="nip" placeholder="Masukkan NIP"
-                                                required><br><br>
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="email">Email*</label><br>
-                                            <input type="email" name="email" placeholder="Masukkan Email" required><br><br>
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="password">Password*</label><br>
-                                            <input type="password" name="password" placeholder="Masukkan Password"
-                                                required><br><br>
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="nama">Nama Staff*</label><br>
-                                            <input type="text" name="name" placeholder="Masukkan Nama Lengkap"
-                                                required><br><br>
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="prodi">Prodi*</label><br>
-                                            <select name="prodi" required>
-                                                <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>  
-                                                <option value="D3 Sistem Informasi">D3 Sistem Informasi</option> 
-                                                <option value="S1 Informatika">S1 Informatika</option>      
-                                            </select><br><br>
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="no_hp">Nomor Handphone*</label><br>
-                                            <input type="number" name="no_hp" placeholder="Masukkan No HP"
-                                                required><br><br>
-                                        </div>
-                                        <div>
-                                            <button class="btn-primary" type="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
+                        <form action="{{ route('staff.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+                                <div class="input-box">
+                                    <label for="nip">Nomor Induk Pegawai*</label><br>
+                                    <input type="number" name="nip" placeholder="Masukkan NIP" required><br><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="email">Email*</label><br>
+                                    <input type="email" name="email" placeholder="Masukkan Email" required><br><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="password">Password*</label><br>
+                                    <input type="password" name="password" placeholder="Masukkan Password"
+                                        required><br><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="nama">Nama Staff*</label><br>
+                                    <input type="text" name="name" placeholder="Masukkan Nama Lengkap"
+                                        required><br><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="prodi">Prodi*</label><br>
+                                    <select name="prodi" required>
+                                        <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>
+                                        <option value="D3 Sistem Informasi">D3 Sistem Informasi</option>
+                                        <option value="S1 Informatika">S1 Informatika</option>
+                                    </select><br><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="no_hp">Nomor Handphone*</label><br>
+                                    <input type="number" name="no_hp" placeholder="Masukkan No HP" required><br><br>
+                                </div>
+                                <div>
+                                    <button class="btn-primary" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -47,13 +47,13 @@
                                                 <td>{{ $mhs->user->name }}</td>
                                                 <td>{{ $mhs->user->email }}</td>
                                                 <td>
-                                                    <form id="deleteForm{{ $mhs->id }}"
-                                                        action="{{ route('user.destroy', $mhs->id_user) }}" method="POST">
+                                                    <form id="deleteForm{{ $mhs->user->id }}"
+                                                        action="{{ route('user.destroy', $mhs->user->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="button"
                                                             class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $mhs->id }})">
+                                                            onclick="confirmDelete({{ $mhs->user->id }})">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </form>
@@ -97,13 +97,13 @@
                                                         <td>{{ $kp->user->name }}</td>
                                                         <td>{{ $kp->prodi }}</td>
                                                         <td>
-                                                            <form id="deleteForm{{ $kp->id }}"
-                                                                action={{ route('user.destroy', $kp->id_user) }} method="POST">
+                                                            <form id="deleteForm{{ $kp->user->id }}"
+                                                                action={{ route('user.destroy', $kp->user->id) }} method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="button"
                                                                     class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                                    onclick="confirmDelete({{ $kp->id }})">
+                                                                    onclick="confirmDelete({{ $kp->user->id }})">
                                                                     <i class="fas fa-trash-alt"></i>
                                                                 </button>
                                                             </form>
@@ -147,13 +147,13 @@
                                                 <td>{{ $dd->user->name }}</td>
                                                 <td>{{ $dd->no_hp }}</td>
                                                 <td>
-                                                    <form id="deleteForm{{ $dd->id }}"
-                                                        action="{{ route('user.destroy', $dd->id_user) }}" method="POST">
+                                                    <form id="deleteForm{{ $dd->user->id }}"
+                                                        action="{{ route('user.destroy', $dd->user->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="button"
                                                             class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $dd->id }})">
+                                                            onclick="confirmDelete({{ $dd->user->id }})">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </form>
@@ -195,13 +195,13 @@
                                                 <td>{{ $mitra->user->name }}</td>
                                                 <td>{{ $mitra->no_hp }}</td>
                                                 <td>
-                                                    <form id="deleteForm{{ $mitra->id }}"
-                                                        action="{{ route('user.destroy', $mitra->id_user) }}" method="POST">
+                                                    <form id="deleteForm{{ $mitra->user->id }}"
+                                                        action="{{ route('user.destroy', $mitra->user->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="button"
                                                             class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $mitra->id }})">
+                                                            onclick="confirmDelete({{ $mitra->user->id }})">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </form>
@@ -242,13 +242,13 @@
                                                 <td>{{ $pic->user->name }}</td>
                                                 <td>{{ $pic->prodi }}</td>
                                                 <td>
-                                                    <form id="deleteForm{{ $pic->id }}"
-                                                        action="{{ route('user.destroy', $pic->id_user) }}" method="POST">
+                                                    <form id="deleteForm{{ $pic->user->id }}"
+                                                        action="{{ route('user.destroy', $pic->user->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="button"
                                                             class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $pic->id }})">
+                                                            onclick="confirmDelete({{ $pic->user->id }})">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </form>
@@ -289,13 +289,13 @@
                                                 <td>{{ $staff->user->name }}</td>
                                                 <td>{{ $staff->prodi }}</td>
                                                 <td>
-                                                    <form id="deleteForm{{ $staff->id }}"
-                                                        action="{{ route('user.destroy', $staff->id_user) }}" method="POST">
+                                                    <form id="deleteForm{{ $staff->user->id }}"
+                                                        action="{{ route('user.destroy', $staff->user->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="button"
                                                             class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $staff->id }})">
+                                                            onclick="confirmDelete({{ $staff->user->id }})">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </form>

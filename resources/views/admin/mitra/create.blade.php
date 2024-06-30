@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Tambah Dosen</h1>
+                <h1 class="h3 mb-0 text-gray-800">Tambah Mitra</h1>
             </div>
             <div class="back">
                 <a href="{{ route('user.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i

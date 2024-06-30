@@ -61,7 +61,7 @@
             </div>
             <div class="item">
                 <h3>Dosen Pembimbing</h3>
-                <p>{{ isset($praMbkmData->dosen) ? $praMbkmData->dosen : '-' }}</p>
+                <p>{{ isset($praMbkmData->dosen) ? $praMbkmData->dosen->user->name : '-' }}</p>
             </div>
             <div class="item">
                 <h3>Posisi</h3>
