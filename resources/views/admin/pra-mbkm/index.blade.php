@@ -73,7 +73,7 @@
                                                 <td>{{ $item->instansi }}</td>
                                                 <td>{{ $item->alamat_instansi }}</td>
                                                 <td>{{ $item->nama_mentor }}</td>
-                                                <td>{{ $item->dosen->user->name }}</td>
+                                                <td>{{ isset($item->dosen) ? $item->dosen->user->name : 'Belum Ada' }}</td>
                                                 <td>{{ $item->posisi }}</td>
                                                 <td><a href="{{ Storage::url($item->loa) }}" target="_blank">Lihat
                                                         FIle</a></td>
