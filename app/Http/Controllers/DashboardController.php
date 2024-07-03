@@ -88,8 +88,8 @@ class DashboardController extends Controller
         $bar['Studi Independen']['bg'] = 'bg-warning';
         $bar['Magang MSIB']['bg'] = 'bg-success';
         $bar['PMM']['bg'] = 'bg-purple';
-        $bar['IISMA']['bg'] = 'bg-pink';
-        $bar['Wirausaha Merdeka']['bg'] = 'bg-teal';
+        $bar['IISMA']['bg'] = 'bg-secondary';
+        $bar['Wirausaha Merdeka']['bg'] = 'bg-dark';
         $bar['Bangkit']['bg'] = 'bg-primary';
         $bar['Magang Mandiri']['bg'] = 'bg-info';
         $bar['ABN']['bg'] = 'bg-orange';
