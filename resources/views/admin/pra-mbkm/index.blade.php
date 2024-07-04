@@ -8,9 +8,11 @@
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Data Mahasiswa Pra MBKM</h1>
                 <!-- report -->
-                <a href="{{ route('prambkm.print') }}" target="_blank"
-                    class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                        class="fas fa-print fa-sm text-white-50"></i> Buat Laporan</a>
+                @if(Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                    <a href="{{ route('prambkm.print') }}" target="_blank"
+                        class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
+                            class="fas fa-print fa-sm text-white-50"></i> Buat Laporan</a>
+                @endif
             </div>
 
             <!-- Content Row -->
@@ -52,7 +54,9 @@
                                             <th>loa</th>
                                             <th>KRS</th>
                                             <th>KHS</th>
-                                            <th>Action</th>
+                                            @if (Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -73,7 +77,8 @@
                                                 <td>{{ $item->instansi }}</td>
                                                 <td>{{ $item->alamat_instansi }}</td>
                                                 <td>{{ $item->nama_mentor }}</td>
-                                                <td>{{ isset($item->dosen) ? $item->dosen->user->name : 'Belum Ada' }}</td>
+                                                <td>{{ isset($item->dosen) ? $item->dosen->user->name : 'Belum Ada' }}
+                                                </td>
                                                 <td>{{ $item->posisi }}</td>
                                                 <td><a href="{{ Storage::url($item->loa) }}" target="_blank">Lihat
                                                         FIle</a></td>
@@ -81,28 +86,30 @@
                                                         FIle</a></td>
                                                 <td><a href="{{ Storage::url($item->khs) }}" target="_blank">Lihat
                                                         FIle</a></td>
-                                                <td>
-                                                    <!-- Form for EDIT request -->
-                                                    <form action="{{ route('prambkm.edit', $item->id) }}"
-                                                        method="GET" style="display:inline;">
-                                                        <button
-                                                            class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"
-                                                            type="submit"><i class="fas fa-edit"></i></button>
-                                                    </form>
+                                                @if (Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                                                    <td>
+                                                        <!-- Form for EDIT request -->
+                                                        <form action="{{ route('prambkm.edit', $item->id) }}"
+                                                            method="GET" style="display:inline;">
+                                                            <button
+                                                                class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"
+                                                                type="submit"><i class="fas fa-edit"></i></button>
+                                                        </form>
 
-                                                    <!-- Form for DELETE request -->
-                                                    <form id="deleteForm{{ $item->id }}"
-                                                        action="{{ route('prambkm.destroy', $item->id) }}"
-                                                        id="{{ $item->id }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="button"
-                                                            class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $item->id }})">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                        <!-- Form for DELETE request -->
+                                                        <form id="deleteForm{{ $item->id }}"
+                                                            action="{{ route('prambkm.destroy', $item->id) }}"
+                                                            id="{{ $item->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="button"
+                                                                class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
+                                                                onclick="confirmDelete({{ $item->id }})">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>

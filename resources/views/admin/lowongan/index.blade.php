@@ -5,8 +5,9 @@
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Lowongan MBKM Mandiri</h1>
-                <!-- report -->
-                <a href="{{ route('lowongan.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                <!-- Tambah Lowongan -->
+                <a href="{{ route('lowongan.create') }}"
+                    class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                         class="fas fa-plus fa-sm text-white-50"></i> Tambah Lowongan</a>
             </div>
 
@@ -26,8 +27,7 @@
                         @endif
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-borderless" id="" width="100%"
-                                    cellspacing="0">
+                                <table class="table table-borderless" id="" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -38,7 +38,9 @@
                                             <th>Durasi Magang</th>
                                             <th>Deadline</th>
                                             <th>Flyer</th>
-                                            <th>Action</th>
+                                            @if(Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -51,22 +53,24 @@
                                                 <td>{{ $item->posisi }}</td>
                                                 <td>{{ $item->durasi_magang }}</td>
                                                 <td>{{ $item->deadline }}</td>
-                                                <td><a href="{{ Storage::url($item->flyer) }}"
-                                                        target="_blank">Lihat Gambar</a></td>
-                                                <td>
-                                                    <!-- Form for DELETE request -->
-                                                    <form id="deleteForm{{ $item->id }}"
-                                                        action="{{ route('lowongan.destroy', $item->id) }}" id="{{ $item->id }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="button"
-                                                            class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $item->id }})">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                <td><a href="{{ Storage::url($item->flyer) }}" target="_blank">Lihat
+                                                        Gambar</a></td>
+                                                @if (Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                                                    <td>
+                                                        <!-- Form for DELETE request -->
+                                                        <form id="deleteForm{{ $item->id }}"
+                                                            action="{{ route('lowongan.destroy', $item->id) }}"
+                                                            id="{{ $item->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="button"
+                                                                class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
+                                                                onclick="confirmDelete({{ $item->id }})">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>

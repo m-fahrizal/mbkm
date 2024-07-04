@@ -8,9 +8,11 @@
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Data Mahasiswa Pasca MBKM</h1>
                 <!-- report -->
-                <a href="{{ route('pascambkm.print') }}" target="_blank"
-                    class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                        class="fas fa-print fa-sm text-white-50"></i> Buat Laporan</a>
+                @if(Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                    <a href="{{ route('pascambkm.print') }}" target="_blank"
+                        class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
+                            class="fas fa-print fa-sm text-white-50"></i> Buat Laporan</a>
+                @endif
             </div>
 
             <!-- Content Row -->
@@ -39,7 +41,9 @@
                                             <th>Log Book</th>
                                             <th>Transkrip Nilai</th>
                                             <th>Laporan Akhir</th>
-                                            <th>Action</th>
+                                            @if (Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,19 +60,22 @@
                                                         FIle</a></td>
                                                 <td><a href="{{ Storage::url($item->laporan) }}" target="_blank">Lihat
                                                         FIle</a></td>
-                                                <td>
-                                                    <!-- Form for DELETE request -->
-                                                    <form id="deleteForm{{ $item->id }}"
-                                                        action="{{ route('pascambkm.destroy', $item->id) }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="button"
-                                                            class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
-                                                            onclick="confirmDelete({{ $item->id }})">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                @if (Gate::check('admin') || Gate::check('pic') || Gate::check('staff'))
+                                                    <td>
+                                                        <!-- Form for DELETE request -->
+                                                        <form id="deleteForm{{ $item->id }}"
+                                                            action="{{ route('pascambkm.destroy', $item->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="button"
+                                                                class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
+                                                                onclick="confirmDelete({{ $item->id }})">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>
