@@ -22,6 +22,12 @@ class MahasiswaController extends Controller
         return view('admin.mahasiswa.index', compact('dosen'));
     }
 
+    public function print()
+    {
+        $data = Mahasiswa::all(); 
+        return view('admin.mahasiswa.print', compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
