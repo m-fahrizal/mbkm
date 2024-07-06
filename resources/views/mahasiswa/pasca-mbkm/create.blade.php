@@ -1,5 +1,10 @@
 <x-mahasiswa-layout>
     <link rel="stylesheet" href="/css/pasca-mbkm.css">
+    <style>
+        .sidebar {
+            top: -15px;
+        }
+    </style>
     <div class="main-content">
         <h1>Form Pasca Kegiatan MBKM</h1>
         @if ($message = Session::get('success'))

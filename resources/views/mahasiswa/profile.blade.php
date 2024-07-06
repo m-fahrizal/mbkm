@@ -1,5 +1,10 @@
 <x-mahasiswa-layout>
     <link rel="stylesheet" href="/css/profile.css">
+    <style>
+        .sidebar {
+            top: -15px;
+        }
+    </style>
     <div class="main-content">
         <h1>Profile</h1>
         <div class="content">

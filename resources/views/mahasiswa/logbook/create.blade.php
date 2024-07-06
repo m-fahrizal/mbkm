@@ -1,5 +1,10 @@
 <x-mahasiswa-layout>
     <link rel="stylesheet" href="/css/form-logbook.css">
+    <style>
+        .sidebar {
+            top: -15px;
+        }
+    </style>
     <div class="main-content">
         <a href="/logbook" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
         <h1>Logbook</h1>

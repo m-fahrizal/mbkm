@@ -1,5 +1,10 @@
 <x-mahasiswa-layout>
     <link rel="stylesheet" href="/css/home.css">
+    <style>
+        .sidebar {
+            top: -15px;
+        }
+    </style>
     <div class="main-content">
         <div class="info-mbkm">
             <h1>MBKM Fakultas Ilmu Komputer</h1>
@@ -20,9 +25,8 @@
                             dalam pembelajaran, pengembangan strategi, dan model pembelajaran yang kreatif,
                             inovatif, dan menyenangkan.
                         </p>
-                        <a href="https://kampusmerdeka.kemdikbud.go.id/program/mengajar" target="_blank"
-                            id="info1" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://kampusmerdeka.kemdikbud.go.id/program/mengajar" target="_blank" id="info1"
+                            class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -34,8 +38,7 @@
                             terbaik dari industri yang kamu minati!
                         </p>
                         <a href="https://kampusmerdeka.kemdikbud.go.id/program/magang/detail" target="_blank"
-                            id="info2" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                            id="info2" class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -46,9 +49,8 @@
                             mempelajari kompetensi yang spesifik dan praktis langsung dari para pakarnya selama
                             1 (satu) semester melalui aktivitas pembelajaran dan praktik langsung.
                         </p>
-                        <a href="https://kampusmerdeka.kemdikbud.go.id/program/studi-independen/detail"
-                            target="_blank" id="info3" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://kampusmerdeka.kemdikbud.go.id/program/studi-independen/detail" target="_blank"
+                            id="info3" class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -60,9 +62,8 @@
                             mahasiswa belajar dan mengembangkan diri menjadi calon wirausahawan melalui
                             aktivitas di luar kelas perkuliahan.
                         </p>
-                        <a href="https://pmm.kampusmerdeka.kemdikbud.go.id/pages/info/program/pmm_4/"
-                            target="_blank" id="info4" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://pmm.kampusmerdeka.kemdikbud.go.id/pages/info/program/pmm_4/" target="_blank"
+                            id="info4" class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -87,8 +88,7 @@
                             aktivitas di luar kelas perkuliahan.
                         </p>
                         <a href="https://wirausahamerdeka.kampusmerdeka.kemdikbud.go.id/info/" target="_blank"
-                            id="info-6" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                            id="info-6" class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -99,8 +99,7 @@
                             Mobile Development, dan Cloud Computing.
                         </p>
                         <a href="https://grow.google/intl/id_id/bangkit/?tab=machine-learning" target="_blank"
-                            id="info-6" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                            id="info-6" class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -111,8 +110,7 @@
                             batasan kuota dan jadwal yang lebih fleksibel.
                         </p>
                         <a href="https://kampusmerdeka.kemdikbud.go.id/program/magang-mandiri/detail" target="_blank"
-                            id="info-6" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                            id="info-6" class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -123,9 +121,8 @@
                             esse odio sed possimus doloribus voluptas, sunt sapiente, voluptate corporis cum
                             aliquam nobis culpa! Odit, iusto? Dolore, corrupti!
                         </p>
-                        <a href="https://mbkm.upnvj.ac.id/daftar-skema-mandiri" target="_blank"
-                            id="info-6" class="more-info">More Info <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://mbkm.upnvj.ac.id/daftar-skema-mandiri" target="_blank" id="info-6"
+                            class="more-info">More Info <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

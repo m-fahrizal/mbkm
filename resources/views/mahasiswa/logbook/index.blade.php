@@ -1,5 +1,10 @@
 <x-mahasiswa-layout>
     <link rel="stylesheet" href="/css/logbook.css">
+    <style>
+        .sidebar {
+            top: -15px;
+        }
+    </style>
     <div class="main-content">
         <h1>Logbook</h1><br>
         <a href="{{ route('logbook.create') }}" class="buat"><i class="fa-solid fa-pen-to-square"></i>Buat Logbook</a>

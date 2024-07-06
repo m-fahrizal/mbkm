@@ -24,6 +24,10 @@
         .daftar-btn i {
             margin-left: 8px;
         }
+
+        .sidebar {
+            top: -15px;
+        }
     </style>
     <div class="main-content">
         <h1>Lowongan MBKM Mandiri</h1><br>

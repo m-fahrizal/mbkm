@@ -1,5 +1,10 @@
 <x-mahasiswa-layout>
     <link rel="stylesheet" href="{{ asset('css/form-mandiri.css') }}">
+    <style>
+        .sidebar {
+            top: -15px;
+        }
+    </style>
     <div class="main-content">
         <a href="{{ route('lowongan.user-index') }}" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
         <h1>{{ $lowongan->nama_perusahaan }}</h1>

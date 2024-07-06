@@ -1,6 +1,11 @@
 <x-mahasiswa-layout>
 
     <link rel="stylesheet" href="/css/pra-mbkm.css">
+    <style>
+        .sidebar {
+            top: -15px;
+        }
+    </style>
     <div class="main-content">
         <h1>Form Pra Kegiatan MBKM</h1>
         @if ($message = Session::get('success'))
