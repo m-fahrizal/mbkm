@@ -114,12 +114,4 @@ class DashboardController extends Controller
 
         return view('admin.dashboard.print', ['barData' => $bar, 'pieData' => $pie, 'mhsCount' => $mhsCount, 'mhs'=>$mhs]);
     }
-
-    public function fik()
-    {
-        // Mengambil semua data dari tabel prambkm
-        $mahasiswaFIK = count(Prambkm::all());
-
-        return view('admin.dashboard', compact('mahasiswaFIK'));
-    }
 }
