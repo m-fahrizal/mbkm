@@ -41,7 +41,7 @@
                             <p>{{ $item->deskripsi }}</p>
                             <p class="detail"><b>Tempat:</b> {{ $item->tempat }}</p>
                             <p class="detail"><b>Posisi:</b> {{ $item->posisi }}</p>
-                            <p class="detail"><b>Durasi:</b> {{ $item->durasi }}</p>
+                            <p class="detail"><b>Durasi:</b> {{ $item->durasi_magang }}</p>
                             <p class="detail"><b>Deadline:</b> {{ $item->deadline }}</p>
                         </div>
                         <div class="p-4">
